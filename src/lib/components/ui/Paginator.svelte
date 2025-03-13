@@ -18,7 +18,7 @@
         <button onclick={() => changePage(page - 1)} disabled={page === 1}>Previous</button>
     </div>
 
-    <p>{page}</p>
+    <p class="page-counter">{page}</p>
 
     <div class="button-group flex row">
         <button onclick={() => changePage(page + 1)} disabled={page === totalPages}>Next</button>
@@ -33,11 +33,10 @@
         margin-top: 20px;
     }
 
-    .pagination-wrapper button, .pagination-wrapper p{
+    .pagination-wrapper button{
         padding: 10px 20px;
-        background-color: white;
+        background-color: #F8DF81;
         border-radius: 8px;
-        color: #242424;
         transition: 0.3s;
     }
 
@@ -47,7 +46,23 @@
         cursor: pointer;
     }
 
+    .page-counter {
+    background-color: white;
+    color: #242424;
+    border-radius: 8px;
+    padding: 10px 20px; 
+}
+
     .button-group {
         gap: 10px;
+    }
+
+    .button-group button:disabled {
+        opacity: 0;
+        pointer: none;
+    }
+
+    .button-group button:disabled:hover {
+        cursor: default;
     }
 </style>

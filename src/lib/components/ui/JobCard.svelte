@@ -8,7 +8,9 @@
         <p>{`${job.address.street} - ${job.address.zip}, ${job.address.city}`}</p>
     </div>
     <p>{job.address.city}</p>
-    <button class="btn primary">Se Mere</button>
+    <div class="button-wrapper">
+        <button class="btn primary">Se Mere</button>
+    </div>
 </div>
 
 <style>
@@ -19,8 +21,8 @@
         justify-content: space-between;
         gap: 10px;
         padding: 20px 30px;
-        background-color: #242424;
-        border: 1px solid white;
+        background-color: #373737;
+        border: 1px solid #5e5e5e;
         border-radius: 8px;
         color: white;
     }
@@ -28,6 +30,11 @@
     .title-address-wrapper {
         display: flex;
         flex-direction: column;
+    }
+
+    .button-wrapper {
+        display: flex;
+        justify-content: flex-end;
     }
 
     .categories-wrapper {

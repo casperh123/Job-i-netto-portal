@@ -19,11 +19,15 @@ h3 {
 }
 
 .btn.primary {
-    background-color: rgb(255, 255, 255);
-    color: black;
+    background-color: #F8DF81;
+    color: #242424;
     border-radius: 8px;
     padding: 10px 20px; 
     transition-duration: 0.3s;
+}
+
+.btn {
+    width: fit-content;
 }
 
 .btn.primary:hover {

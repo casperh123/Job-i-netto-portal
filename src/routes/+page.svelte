@@ -48,10 +48,10 @@
 	}
 
 	.job-cards-wrapper {
-			display: flex;
+		display: flex;
 		flex-direction: column;
 		width: 100%;
-		gap: 20px;
+		gap: 30px;
 		margin: 40px 0;
 		padding: 40px;
 		border-radius: 8px;
