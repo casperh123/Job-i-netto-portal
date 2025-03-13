@@ -27,29 +27,35 @@
 	<h2>Din Jobportal til Netto</h2>
 </div>
 
+<div class="job-cards-wrapper">
 {#if jobs.length > 0}
-	<div class="job-cards-wrapper">
 		{#each jobs as job}
 			<JobCard job={job}></JobCard>
 		{/each}
-	</div>
-	<Paginator totalPages={pages} pageChanged={getPage}/>
 
+		<Paginator totalPages={pages} pageChanged={getPage}/>
 {:else}
 	<p>Loading jobs...</p>
 {/if}
+</div>
 
 <style>
 	.header-wrapper {
-		padding: 20px;
+		width: 100%;
+		text-align: center;
+		padding: 80px 20px;
+		background-color: #F8DF81;
 	}
 
 	.job-cards-wrapper {
-		display: flex;
+			display: flex;
 		flex-direction: column;
+		width: 100%;
 		gap: 20px;
+		margin: 40px 0;
 		padding: 40px;
 		border-radius: 8px;
 		background-color: #242424;
+		max-width: 1024px;
 	}
 </style>

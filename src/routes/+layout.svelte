@@ -14,15 +14,16 @@
 
 <style>
 	.main-content-wrapper {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			background-color: #FAD85B;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		background-color: #F5F5F5;
 	}
 
 	.main-content {
-			max-width: 1024px;
-			width: 100%;
-			padding: 80px 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
 	}
 </style>
