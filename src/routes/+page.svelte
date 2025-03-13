@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { apiClient } from '$lib/services/api';
 	import JobCard from '$lib/components/ui/JobCard.svelte';
+	import Paginator from '$lib/components/ui/Paginator.svelte';
 
 	let jobs : Array<any> = [];
 	let page = 1;
@@ -32,11 +33,7 @@
 			<JobCard job={job}></JobCard>
 		{/each}
 	</div>
-	<p>Page: {page}</p>
-	<button on:click={() => getPage(1)} disabled={page === 1}>First</button>
-	<button on:click={() => getPage(page - 1)} disabled={page === 1}>Previous</button>
-	<button on:click={() => getPage(page + 1)} disabled={page === pages}>Next</button>
-	<button on:click={() => getPage(pages)} disabled={page === pages}>Last</button>
+	<Paginator totalPages={pages} pageChanged={getPage}/>
 
 {:else}
 	<p>Loading jobs...</p>

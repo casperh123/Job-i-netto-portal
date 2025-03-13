@@ -7,11 +7,6 @@
         <h3>{job.title}</h3>
         <p>{`${job.address.street} - ${job.address.zip}, ${job.address.city}`}</p>
     </div>
-    <div class="categories-wrapper">
-        {#each job.categories as category}
-            <p class="category">{category}</p>
-        {/each}
-    </div>
     <p>{job.address.city}</p>
     <button class="btn primary">Se Mere</button>
 </div>
@@ -19,7 +14,7 @@
 <style>
     .job-card {
         display: grid;
-        grid-template-columns: 3fr repeat(3, 1fr);
+        grid-template-columns: 3fr repeat(2, 1fr);
         align-items: center;
         justify-content: space-between;
         gap: 10px;
