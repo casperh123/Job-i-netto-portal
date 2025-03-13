@@ -11,6 +11,8 @@ export const GET: RequestHandler = async ({ url }) => {
         'Accept': 'application/json'
       }
     });
+
+    const apiKey = SALLING_API_KEY;
     
     const data = await apiResponse.json();
     
