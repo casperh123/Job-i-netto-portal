@@ -9,7 +9,7 @@
     </div>
     <p>{job.address.city}</p>
     <div class="button-wrapper">
-        <button class="btn primary">Se Mere</button>
+        <a href="{job.url}"><button class="btn primary">Se Mere</button></a>
     </div>
 </div>
 
