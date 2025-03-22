@@ -1,11 +1,11 @@
-<script lang="ts">
-	import { logo } from '$env/static/public/'
-</script>
-
 <header class="header">
 	<div class="header-wrapper">
 		<div class="logo-title-wrapper">
-			<img src="./static/W_N_SVG_ClypperLogo.svg">
+			<img src="/W_N_SVG_ClypperLogo.svg" height=55 width=55>
+			<div class="title-wrapper">
+				<h3>Clypper's</h3>
+				<h4>Job I Netto</h4>
+			</div>
 		</div>
 	</div>
 </header>
@@ -34,5 +34,15 @@
 		padding: 0 20px;
 	}
 
+	.logo-title-wrapper {
+		display: flex;
+		gap: 5px;
+	}
 
+	.title-wrapper {
+		display: flex;
+    	flex-direction: column;
+    	justify-content: space-between;
+    	height: 100%;
+	}
 </style>
