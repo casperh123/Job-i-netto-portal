@@ -1,14 +1,12 @@
-<script lang="ts">
-
-</script>
-
 <header class="header">
 	<div class="header-wrapper">
-		<h2>Job I Netto</h2>
-		<nav class="nav-wrapper">
-			<a href="/" class="nav-element">Home</a>
-			<a href="/some-page" class="nav-element">Some Page</a>
-		</nav>
+		<div class="logo-title-wrapper">
+			<img src="/W_N_SVG_ClypperLogo.svg" height=55 width=55>
+			<div class="title-wrapper">
+				<h3>Clypper's</h3>
+				<h4>Job I Netto</h4>
+			</div>
+		</div>
 	</div>
 </header>
 
@@ -36,21 +34,15 @@
 		padding: 0 20px;
 	}
 
-	.nav-wrapper {
+	.logo-title-wrapper {
 		display: flex;
-		justify-content: center;
+		gap: 5px;
 	}
 
-	.nav-element {
-			color: white;
-			border-radius: 3px;
-			padding: 10px 20px;
-			transition-duration: 0.3s;
-	}
-
-	.nav-element:hover {
-			color: white;
-			background-color: #FAD85B;
-			border-radius: 8px;
+	.title-wrapper {
+		display: flex;
+    	flex-direction: column;
+    	justify-content: space-between;
+    	height: 100%;
 	}
 </style>
