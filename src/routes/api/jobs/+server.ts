@@ -24,7 +24,8 @@ export const GET: RequestHandler = async ({ url }) => {
       headers: {
         'Content-Type': 'application/json',
         'X-Total-Count': totalCount || '',
-        'Link': linkHeader || ''
+        'Link': linkHeader || '',
+        'cache-control': 'max-age=6000'
       }
     });
 };
