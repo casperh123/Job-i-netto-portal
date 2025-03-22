@@ -1,14 +1,12 @@
 <script lang="ts">
-
+	import { logo } from '$env/static/public/'
 </script>
 
 <header class="header">
 	<div class="header-wrapper">
-		<h2>Job I Netto</h2>
-		<nav class="nav-wrapper">
-			<a href="/" class="nav-element">Home</a>
-			<a href="/some-page" class="nav-element">Some Page</a>
-		</nav>
+		<div class="logo-title-wrapper">
+			<img src="./static/W_N_SVG_ClypperLogo.svg">
+		</div>
 	</div>
 </header>
 
@@ -36,21 +34,5 @@
 		padding: 0 20px;
 	}
 
-	.nav-wrapper {
-		display: flex;
-		justify-content: center;
-	}
 
-	.nav-element {
-			color: white;
-			border-radius: 3px;
-			padding: 10px 20px;
-			transition-duration: 0.3s;
-	}
-
-	.nav-element:hover {
-			color: white;
-			background-color: #FAD85B;
-			border-radius: 8px;
-	}
 </style>
