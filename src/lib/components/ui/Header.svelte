@@ -45,4 +45,15 @@
     	justify-content: space-between;
     	height: 100%;
 	}
+
+	@media only screen and (max-width: 720px) {
+		.header {
+			padding: 0px 5px;
+			margin: unset;
+		}
+
+		.header-wrapper {
+			padding: 20px 5px;
+		}
+	}
 </style>

@@ -1,10 +1,12 @@
 <script lang="ts">
     let { job } = $props();
+
+    let displayTitle = $derived(job.title.split(" - ")[0]);
 </script>
 
 <div class="job-card">
     <div class="title-address-wrapper">
-        <h3>{job.title}</h3>
+        <h3>{displayTitle}</h3>
         <p>{`${job.address.street} - ${job.address.zip}, ${job.address.city}`}</p>
     </div>
     <p>{job.address.city}</p>
@@ -24,6 +26,7 @@
         background-color: #373737;
         border: 1px solid #5e5e5e;
         border-radius: 8px;
+        text-align: left;
         color: white;
     }
 
@@ -41,4 +44,10 @@
         display: grid;
         grid-gap: 20px;
     }
+
+    @media only screen and (max-width: 720px) {
+		.job-card {
+			padding: 10px 10px;
+		}
+	}
 </style>

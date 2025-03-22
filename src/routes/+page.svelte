@@ -28,15 +28,16 @@
 </div>
 
 <div class="job-cards-wrapper">
-{#if jobs.length > 0}
+	<h2>Jobs</h2>
+  {#if jobs.length > 0}
 		{#each jobs as job}
 			<JobCard job={job}></JobCard>
 		{/each}
 
 		<Paginator totalPages={pages} pageChanged={getPage}/>
-{:else}
+  {:else}
 	<p>Loading jobs...</p>
-{/if}
+  {/if}
 </div>
 
 <style>
@@ -50,12 +51,26 @@
 	.job-cards-wrapper {
 		display: flex;
 		flex-direction: column;
+		text-align: center;
 		width: 100%;
+		color: white;
 		gap: 30px;
 		margin: 40px 0;
 		padding: 40px;
 		border-radius: 8px;
 		background-color: #242424;
 		max-width: 1024px;
+	}
+
+	@media only screen and (max-width: 720px) {
+		.header-wrapper {
+			padding: 40px 5px
+		}
+
+		.job-cards-wrapper {
+			padding: 20px 10px;
+			margin: 0 0 40px 0;
+			gap: 15px;
+		}
 	}
 </style>

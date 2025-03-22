@@ -31,6 +31,7 @@
         justify-content: space-between;
         width: 100%;
         margin-top: 20px;
+        color: #242424;
     }
 
     .pagination-wrapper button{
@@ -64,5 +65,20 @@
 
     .button-group button:disabled:hover {
         cursor: default;
+    }
+
+    @media only screen and (max-width: 720px) {
+        .page-counter {
+            padding: 5px 10px;
+        }
+
+        .pagination-wrapper button {
+            padding: 5px 10px;
+        }
+
+        .button-group {
+            gap: 10px;
+            font-size: 13px;
+        }
     }
 </style>

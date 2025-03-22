@@ -1,6 +1,9 @@
 <footer>
 	<div class="inner-footer-container">
-		<h2>A product by <a href="https://clyppertechnology.com">Clypper Technology</a></h2>
+		<a href="https://clyppertechnology.com" class="logo-link">
+			<img src="/W_N_SVG_ClypperLogo.svg" height=40 width=40>
+			<h3>Clypper Technology</h3>
+		</a>
 	</div>
 </footer>
 
@@ -16,5 +19,10 @@
 	.inner-footer-container {
 			max-width: 1024px;
 			padding: 40px 20px;
+	}
+
+	.logo-link {
+		display: flex;
+		align-items: center;
 	}
 </style>
