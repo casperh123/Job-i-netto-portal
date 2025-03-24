@@ -1,7 +1,7 @@
 <footer>
 	<div class="inner-footer-container">
 		<a href="https://clyppertechnology.com" class="logo-link">
-			<img src="/W_N_SVG_ClypperLogo.svg" height=40 width=40>
+			<img src="/W_N_SVG_ClypperLogo.svg" height=40 width=40 alt="Clypper Technology Logo">
 			<h3>Clypper Technology</h3>
 		</a>
 	</div>

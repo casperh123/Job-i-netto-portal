@@ -1,7 +1,7 @@
 <header class="header">
 	<div class="header-wrapper">
 		<div class="logo-title-wrapper">
-			<img src="/W_N_SVG_ClypperLogo.svg" height=55 width=55>
+			<img src="/W_N_SVG_ClypperLogo.svg" height=55 width=55 alt="Clypper Technology Logo">
 			<div class="title-wrapper">
 				<h3>Clypper's</h3>
 				<h4>Job I Netto</h4>

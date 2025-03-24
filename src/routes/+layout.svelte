@@ -18,6 +18,7 @@
 		display: flex;
 		justify-content: center;
 		background-color: #F5F5F5;
+		min-height: calc(100vh - 74px);
 	}
 
 	.main-content {

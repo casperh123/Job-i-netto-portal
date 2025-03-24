@@ -3,7 +3,7 @@ set -eu pipefail  # Exit on error, undefined vars, and pipeline failures
 
 # Define image names
 IMAGE_NAME="clyppertechnology/jobinetto"
-VERSION_TAG="${IMAGE_NAME}:0.0.3"
+VERSION_TAG="${IMAGE_NAME}:0.0.6"
 LATEST_TAG="${IMAGE_NAME}:latest"
 
 echo "Building image ${VERSION_TAG}..."
@@ -20,4 +20,4 @@ docker push "${LATEST_TAG}"
 
 echo "Done!"s
 
-ssh -t ubuntu@141.147.60.73 "docker pull clyppertechnology/jobinetto:latest && docker compose up -d" &
+ssh -t ubuntu@141.147.60.73 "docker pull clyppertechnology/jobinetto:latest && docker compose up -d"

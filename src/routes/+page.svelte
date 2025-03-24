@@ -4,14 +4,12 @@
 	import JobCard from '$lib/components/ui/JobCard.svelte';
 	import Paginator from '$lib/components/ui/Paginator.svelte';
 
-	let jobs : Array<any> = [];
-	let page = 1;
-	let items = 0;
-	let pages = 0;
+	let { data } = $props();
 
-	onMount(async () => {
-		await getPage(page);
-	})
+	let jobs : Array<any> = $state(data.jobs ?? []);
+	let page = $state(data.page);
+	let items = $state(data.items);
+	let pages = $state(Math.ceil(items / 10));
 
 	async function getPage(nextPage : number) {
 		const response = await apiClient.Get("", `/api/jobs?page=${nextPage}`)
@@ -21,6 +19,11 @@
 		pages = Math.ceil(items / 10);
 	}
 </script>
+
+<svelte:head>
+	<title>{data.title}</title>
+	<meta name="description" content={data.metaDescription}/>
+</svelte:head>
 
 <div class="header-wrapper">
 	<h1>Job i Netto</h1>
