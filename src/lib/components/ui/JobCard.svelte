@@ -7,9 +7,9 @@
 <div class="job-card">
     <div class="title-address-wrapper">
         <h3>{displayTitle}</h3>
-        <p>{`${job.address.street} - ${job.address.zip}, ${job.address.city}`}</p>
+        <p>{`${job.addressStreet} - ${job.addressZip}, ${job.addressCity}`}</p>
     </div>
-    <p>{job.address.city}</p>
+    <p>{job.addressCity}</p>
     <div class="button-wrapper">
         <a href="{job.url}"><button class="btn primary">Se Mere</button></a>
     </div>

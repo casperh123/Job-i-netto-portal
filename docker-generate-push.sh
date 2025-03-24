@@ -3,7 +3,7 @@ set -eu pipefail  # Exit on error, undefined vars, and pipeline failures
 
 # Define image names
 IMAGE_NAME="clyppertechnology/jobinetto"
-VERSION_TAG="${IMAGE_NAME}:0.0.7"
+VERSION_TAG="${IMAGE_NAME}:0.0.8"
 LATEST_TAG="${IMAGE_NAME}:latest"
 
 echo "Building image ${VERSION_TAG}..."

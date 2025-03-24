@@ -1,10 +1,11 @@
 <script lang="ts">
 	import JobCard from '$lib/components/ui/JobCard.svelte';
 	import Paginator from '$lib/components/ui/Paginator.svelte';
+	import type { JobDTO } from './api/jobs/models';
 
 	let { data } = $props();
 
-	let jobs : Array<any> = $state(data.jobs ?? []);
+	let jobs : JobDTO[] = $state(data.jobs ?? []);
 	let page = $state(data.page);
 	let items = $state(data.items);
 	let pages = $state(Math.ceil(items / 10));
@@ -12,7 +13,8 @@
 	async function getPage(nextPage : number) {
 		const response = await fetch(`/api/jobs?page=${nextPage}`);
 		const json = await response.json();
-		jobs = json.items;
+		
+		jobs = json.jobs as JobDTO[];
 		items = json.pages;
 		page = nextPage;
 		pages = Math.ceil(items / 10);

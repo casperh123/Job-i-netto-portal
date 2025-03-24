@@ -2,6 +2,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { SALLING_API_KEY } from '$env/static/private';
 import cache from '$lib/server/cache';
+import type { JobDTO } from './models';
 
 export const GET: RequestHandler = async ({ url }) => {
 	const page = Number(url.searchParams.get('page') || 1);
@@ -24,10 +25,18 @@ export const GET: RequestHandler = async ({ url }) => {
       }
     );
 
-
-
     const totalCount = cachedResponse.count;
-    const newResponse = { pages: totalCount, items: cachedResponse.jobs };
+    const jobs = cachedResponse.jobs.map(job => (
+      {
+        title: job.title,
+        addressStreet: job.address.street,
+        addressZip: job.address.zip,
+        addressCity: job.address.city,
+        url: job.url
+      }
+    ) as JobDTO)
+
+    const newResponse = { pages: totalCount, jobs: jobs };
     
     return new Response(JSON.stringify(newResponse), {
       headers: {
