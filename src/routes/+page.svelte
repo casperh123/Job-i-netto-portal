@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { apiClient } from '$lib/services/api';
 	import JobCard from '$lib/components/ui/JobCard.svelte';
 	import Paginator from '$lib/components/ui/Paginator.svelte';
 
@@ -12,9 +10,10 @@
 	let pages = $state(Math.ceil(items / 10));
 
 	async function getPage(nextPage : number) {
-		const response = await apiClient.Get("", `/api/jobs?page=${nextPage}`)
-		jobs = response.items;
-		items = response.pages;
+		const response = await fetch(`/api/jobs?page=${nextPage}`);
+		const json = await response.json();
+		jobs = json.items;
+		items = json.pages;
 		page = nextPage;
 		pages = Math.ceil(items / 10);
 	}
