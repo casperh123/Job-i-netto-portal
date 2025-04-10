@@ -2,12 +2,13 @@
     let { job } = $props();
 
     let displayTitle = $derived(job.title.split(" - ")[0]);
+    let displayAddress = `${job?.addressStreet ?? "Ukendt"} - ${job?.addressZip ?? "Ukendt"}, ${job?.addressCity ?? "Ukendt"}`;
 </script>
 
 <div class="job-card">
     <div class="title-address-wrapper">
         <h3>{displayTitle}</h3>
-        <p>{`${job.addressStreet} - ${job.addressZip}, ${job.addressCity}`}</p>
+        <p>{displayAddress}</p>
     </div>
     <p>{job.addressCity}</p>
     <div class="button-wrapper">

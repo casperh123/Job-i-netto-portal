@@ -29,9 +29,9 @@ export const GET: RequestHandler = async ({ url }) => {
     const jobs = cachedResponse.jobs.map(job => (
       {
         title: job.title,
-        addressStreet: job.address.street,
-        addressZip: job.address.zip,
-        addressCity: job.address.city,
+        addressStreet: job.address?.street,
+        addressZip: job.address?.zip,
+        addressCity: job.address?.city,
         url: job.url
       }
     ) as JobDTO)

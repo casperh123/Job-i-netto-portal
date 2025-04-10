@@ -8,7 +8,7 @@
 	let jobs : JobDTO[] = $state(data.jobs ?? []);
 	let page = $state(data.page);
 	let items = $state(data.items);
-	let pages = $state(Math.ceil(items / 10));
+	let pages = $derived(Math.ceil(items / 10));
 
 	async function getPage(nextPage : number) {
 		const response = await fetch(`/api/jobs?page=${nextPage}`);
@@ -17,7 +17,6 @@
 		jobs = json.jobs as JobDTO[];
 		items = json.pages;
 		page = nextPage;
-		pages = Math.ceil(items / 10);
 	}
 </script>
 
