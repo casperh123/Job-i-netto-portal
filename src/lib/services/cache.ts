@@ -9,6 +9,8 @@ const DAY_IN_SECONDS = 60 * 60 * 24;
 export default {
   async get<T>(key: string, fetchFn: () => Promise<T>): Promise<T> {
     const cached = await redis.get(key);
+
+    console.log(key);
     
     if (cached) {
       return JSON.parse(cached) as T;

@@ -3,10 +3,10 @@
 	import Paginator from '$lib/components/ui/Paginator.svelte';
 	import { getJobs } from '$lib/services/jobs.remote';
 
-  	let data = $props();
+  let data = $props();
 
 	let page = $state(1);
-  	let jobsList = $derived(await getJobs((page)))
+  let jobsList = $derived(await getJobs((page)))
 	let pages = $derived(jobsList.pages);
 </script>
 
@@ -16,21 +16,22 @@
 </svelte:head>
 
 <div class="header-wrapper">
-	<h1>Job i Netto</h1>
-	<h2>Din Jobportal til Netto</h2>
+	<h1>Job i Netto - Ledige stillinger</h1>
 </div>
 
 <div class="job-cards-wrapper">
 	<h2>Jobs</h2>
-	{#if jobsList.jobs.length > 0}
+	
+  {#if jobsList.jobs.length > 0}
 			{#each jobsList.jobs as job}
 				<JobCard job={job}></JobCard>
 			{/each}
 
-			<Paginator totalPages={pages} pageChanged={() => page = page + 1}/>
+			<Paginator totalPages={pages} pageChanged={(newPage: number) => page = newPage}/>
 	{:else}
 		<p>Loading jobs...</p>
 	{/if}
+
 </div>
 
 <style>

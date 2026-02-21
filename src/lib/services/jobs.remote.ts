@@ -19,6 +19,9 @@ export const getJobs = query(z.number(), async (page = 1, perPage = 10): Promise
     let pages: number = Number(response.headers.get('x-total-count')) ?? 0;
     pages = Math.ceil(pages / perPage);
     const retrievedJobs: Job[] = await response.json();
+
+    console.log(retrievedJobs);
+
     const jobs = retrievedJobs.map(job => ({
       title: job.title,
       id: job.id,
@@ -31,7 +34,7 @@ export const getJobs = query(z.number(), async (page = 1, perPage = 10): Promise
   return cachedResponse;
 })
 
-interface JobList {
+export interface JobList {
   pages: number;
   jobs: JobDTO[];
 }

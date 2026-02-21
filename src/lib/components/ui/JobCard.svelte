@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { JobDTO } from "$lib/services/jobService.remote";
+	import type { JobDTO } from "$lib/services/jobs.remote";
 	import Button from "./button/button.svelte";
 
     interface Props {
@@ -9,7 +9,7 @@
     let { job }: Props = $props();
 
     let displayTitle = $derived(job.title.split(" - ")[0]);
-    let displayAddress = `${job.address?.street ?? "Ukendt"} - ${job.address?.zip?? "Ukendt"}, ${job.address?.city ?? "Ukendt"}`;
+    let displayAddress = $derived(`${job.address?.street ?? "Ukendt"} - ${job.address?.zip?? "Ukendt"}, ${job.address?.city ?? "Ukendt"}`);
 </script>
 
 <div class="job-card">
