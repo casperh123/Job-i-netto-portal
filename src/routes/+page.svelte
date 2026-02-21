@@ -1,23 +1,13 @@
 <script lang="ts">
 	import JobCard from '$lib/components/ui/JobCard.svelte';
 	import Paginator from '$lib/components/ui/Paginator.svelte';
-	import type { JobDTO } from './api/jobs/models';
+	import { getJobs } from '$lib/services/jobs.remote';
 
-	let { data } = $props();
+  	let data = $props();
 
-	let jobs : JobDTO[] = $state(data.jobs ?? []);
-	let page = $state(data.page);
-	let items = $state(data.items);
-	let pages = $derived(Math.ceil(items / 10));
-
-	async function getPage(nextPage : number) {
-		const response = await fetch(`/api/jobs?page=${nextPage}`);
-		const json = await response.json();
-		
-		jobs = json.jobs as JobDTO[];
-		items = json.pages;
-		page = nextPage;
-	}
+	let page = $state(1);
+  	let jobsList = $derived(await getJobs((page)))
+	let pages = $derived(jobsList.pages);
 </script>
 
 <svelte:head>
@@ -32,15 +22,15 @@
 
 <div class="job-cards-wrapper">
 	<h2>Jobs</h2>
-  {#if jobs.length > 0}
-		{#each jobs as job}
-			<JobCard job={job}></JobCard>
-		{/each}
+	{#if jobsList.jobs.length > 0}
+			{#each jobsList.jobs as job}
+				<JobCard job={job}></JobCard>
+			{/each}
 
-		<Paginator totalPages={pages} pageChanged={getPage}/>
-  {:else}
-	<p>Loading jobs...</p>
-  {/if}
+			<Paginator totalPages={pages} pageChanged={() => page = page + 1}/>
+	{:else}
+		<p>Loading jobs...</p>
+	{/if}
 </div>
 
 <style>

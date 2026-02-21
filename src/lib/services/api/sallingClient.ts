@@ -1,6 +1,10 @@
 // @ts-ignore
+import { SALLING_API_KEY } from '$env/static/private';
+
+const baseUrl: string = "https://api.sallinggroup.com";
+
 function addAuthHeader(options) {
-	const token = "d64a0e9a-3dd5-4dda-bbb9-862dab5ce3f2";
+	const token = SALLING_API_KEY;
 
 	return {
 		...options,
@@ -12,22 +16,22 @@ function addAuthHeader(options) {
 }
 
 const client = {
-	async Get(url : string , endpoint : string) {
-		const fullUrl = `${url}${endpoint}`;
+  async Get<T>(endpoint : string): Promise<T> {
+		const fullUrl = `${baseUrl}${endpoint}`;
 		const config = addAuthHeader({method: 'GET'})
 
 		return await handleResponse(await fetch(fullUrl, config));
 	},
 
-	async GetRemote(url : string, endpoint : string) {
-		const fullUrl = `${url}${endpoint}`;
+	async GetRemote(endpoint : string) {
+		const fullUrl = `${baseUrl}${endpoint}`;
 		const config = addAuthHeader({method: 'GET'})
 
 		return await fetch(fullUrl, config);
 	}
 }
 
-async function handleResponse(response : Response) {
+async function handleResponse<T>(response : Response): Promise<T> {
 	if(!response.ok) {
 		throw Error();
 	}
