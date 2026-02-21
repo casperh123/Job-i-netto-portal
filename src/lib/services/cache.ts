@@ -1,20 +1,21 @@
-const cache = new Map();
-const DAY_IN_MS = 24 * 60 * 60 * 1000;
+// $lib/server/cache.ts
+import Redis from 'ioredis';
+
+import { REDIS_URL } from '$env/static/private';
+
+const redis = new Redis(REDIS_URL);
+const DAY_IN_SECONDS = 60 * 60 * 24;
 
 export default {
-  async get<T>(key : string, fetchFn: () => Promise<T>): Promise<T> {
-    const cached = cache.get(key);
+  async get<T>(key: string, fetchFn: () => Promise<T>): Promise<T> {
+    const cached = await redis.get(key);
     
-    if (cached && cached.expiry > Date.now()) {
-      return cached.data;
+    if (cached) {
+      return JSON.parse(cached) as T;
     }
     
     const data = await fetchFn();
-    
-    cache.set(key, {
-      data,
-      expiry: Date.now() + DAY_IN_MS
-    });
+    await redis.set(key, JSON.stringify(data), 'EX', DAY_IN_SECONDS);
     
     return data;
   }

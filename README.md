@@ -10,3 +10,4 @@ data from the Salling Group Jobs API.
 To use the program, you have to set the environment variables.
 
     SALLING_API_KEY
+    REDIS_URL
