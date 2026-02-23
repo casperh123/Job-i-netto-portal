@@ -43,7 +43,8 @@ let slug = params.id;
             <p>{job.datasourceId}</p>
           </div>
         </div>
-        <Button href={job.url} target="_blank">Ansøg</Button>
+        <Button href={job.url} target="_blank">Se hos Netto</Button>
+        <Button href={job.applicationLink} target="_blank">Ansøg</Button>
       </div>
 
 
