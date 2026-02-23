@@ -1,5 +1,5 @@
 interface Job {
-    address: Address;
+    address?: Address;
     brand: string;
     title: string;
     description: string;
@@ -7,9 +7,9 @@ interface Job {
     hours: string;
     applicationLink: string;
     created: string;
-    modified: string;
+    modified: Date;
     id: string;
-    published: string;
+    published: Date;
     premium: boolean;
     unsolicited: boolean;
     trainee: boolean;
@@ -19,6 +19,7 @@ interface Job {
     employmentType: string;
     jobLevel: string;
     url: string;
+    datasourceId: string;
 }
 
 type Country = "DE" | "DK" | "PL" | "SE"

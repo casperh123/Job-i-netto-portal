@@ -5,6 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --yellow: #F8DF81;
+  --content-width: 1024px;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -124,21 +126,56 @@ body {
     color: #242424;
 }
 
-h1 {
-    font-size: 48px;
-}
+/* Font sizes — global */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+p, ul, ol, dl { font-size: 1rem; }
+pre, code, small, th, label, figcaption, legend { font-size: 0.875rem; }
+sub, sup { font-size: 0.75rem; }
+blockquote { font-size: 1.125rem; }
 
-h2 {
-    font-size: 36px;
-}
+/* Margins — prose only */
+.prose h1 { margin: 2rem 0 0.5rem; }
+.prose h2 { margin: 2rem 0 0.5rem; }
+.prose h3 { margin: 1.5rem 0 0.5rem; }
+.prose h4 { margin: 1.5rem 0 0.25rem; }
+.prose h5 { margin: 1rem 0 0.25rem; }
+.prose h6 { margin: 1rem 0 0.25rem; }
 
-h3 {
-    font-size: 20px;
-}
+.prose p                    { margin: 0 0 1.25rem; }
+.prose ul, .prose ol        { margin: 0 0 1.25rem; padding-left: 1.5rem; list-style: disc;}
+.prose li                   { margin-bottom: 0.4rem; }
+.prose li:last-child        { margin-bottom: 0; }
+.prose ul ul, .prose ol ol,
+.prose ul ol, .prose ol ul  { margin-top: 0.4rem; margin-bottom: 0; }
+
+.prose dl                   { margin: 0 0 1.25rem; }
+.prose dt                   { margin-top: 0.75rem; }
+.prose dd                   { margin: 0.25rem 0 0 1.5rem; }
+
+.prose blockquote           { margin: 1.5rem 0 1.5rem 1.5rem; padding-left: 1rem; }
+.prose pre                  { margin: 0 0 1.25rem; padding: 1rem; }
+.prose table                { margin: 0 0 1.25rem; }
+.prose th, .prose td        { padding: 0.5rem 0.75rem; }
+.prose img, .prose video,
+.prose figure               { margin: 1.5rem 0; }
+.prose figcaption           { margin-top: 0.5rem; }
+.prose hr                   { margin: 2rem 0; }
+.prose fieldset             { margin: 0 0 1.25rem; }
+.prose input, .prose select,
+.prose textarea             { margin-bottom: 1rem; }
 
 .primary {
     background-color: #F8DF81;
     color: #242424;
+}
+
+.content-width {
+  
 }
 
 .flex {

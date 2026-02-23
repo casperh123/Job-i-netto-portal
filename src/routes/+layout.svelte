@@ -26,5 +26,6 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
+    max-width: var(--content-width)
 	}
 </style>

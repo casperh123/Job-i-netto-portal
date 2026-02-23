@@ -16,7 +16,8 @@
 	"devDependencies": {
 		"@eslint/compat": "^2.0.2",
 		"@eslint/js": "^10.0.1",
-		"@lucide/svelte": "^0.575.0",
+		"@internationalized/date": "^3.10.0",
+		"@lucide/svelte": "^0.561.0",
 		"@openapitools/openapi-generator-cli": "^2.29.0",
 		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/adapter-node": "^5.5.3",
@@ -25,6 +26,7 @@
 		"@tailwindcss/forms": "^0.5.11",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.2.0",
+		"bits-ui": "^2.14.4",
 		"clsx": "^2.1.1",
 		"eslint": "^10.0.1",
 		"eslint-config-prettier": "^10.1.8",
